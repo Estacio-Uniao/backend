@@ -1,0 +1,12 @@
+import { Adress } from "Adress"
+
+model User {
+    id         String   @id @default(uuid())
+    email      String   @unique
+    name       String
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+    adress      Adress[]
+
+    @@map("users")
+}
